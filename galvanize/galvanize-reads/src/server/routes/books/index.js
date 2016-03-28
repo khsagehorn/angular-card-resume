@@ -8,16 +8,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/books', function(req, res, next) {
-  queries.getBooks().then(function(books){
-    queries.getAuthors().select().where('')
-    res.render('/books/index', { title: 'Books', {books: data} });
-
+  queries.getBooks()
+  .then(function(books){
+    queries.getAuthors().select()
+    .then(function(authors){
+      res.render('/books/index', { 
+        title: 'Books',
+        books: books, 
+        authors: authors})
+    });
   })
-
+  .catch(function(err){
+    res.status(500);
+    res.render('error', {message: 'There was an error'})
+  })
 });
 
 router.get('/authors', function(req, res, next) {
+  queries.getAuthors().select()
   res.render('/authors/index', { title: 'Authors' });
+});
+
+router.get('/books/:id', function(req, res, next){
+
+
 });
 
 module.exports = router;
