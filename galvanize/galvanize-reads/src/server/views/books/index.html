@@ -12,4 +12,19 @@
 
   </div>
 
+  <div class="container">
+    {% for book in books %}
+    <a href="/book/{{ book.id }}">
+      <div id="bookBox">
+        <img src="{{ book.img" alt="{{ book.title }}">
+        <div id="info">
+
+          <h2>{{ book.title }}</h2>
+          <h3>By {% for author in authors %} {{ author.firstName }} {{ author.lastName }} {% endfor %}</h3>
+          <p>{{ book.description }}</p>
+      </div>
+    </a>
+    {% endfor %}
+
+  </div>
 {% endblock %}

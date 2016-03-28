@@ -25,7 +25,8 @@ module.exports = {
     return Authors().select().where('id', id);
   },
 
-  getAuthorsForBooks
-
+  getAuthorsForBook: function(){
+    return Authors().select().where('book_id', id)
+  }
 
 };

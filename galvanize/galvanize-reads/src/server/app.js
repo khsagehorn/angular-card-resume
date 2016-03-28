@@ -9,7 +9,8 @@ var swig = require('swig');
 
 
 // *** routes *** //
-var routes = require('./routes/index.js');
+var routes = require('./routes/books/index.js');
+var routes = require('./routes/authors/index.js');
 
 
 // *** express instance *** //
