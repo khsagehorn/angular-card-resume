@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var pg = require('pg');
 var knex = require('../../db/knex');
-var queries = require('../../db/queries');
+var queries = require('../../db/queries/queries');
 
 router.get('/authors', function(req, res, next) {
   queries.getAuthors().select()

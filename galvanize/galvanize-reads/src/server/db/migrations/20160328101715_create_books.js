@@ -5,10 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('genre');
     table.text('description');
     table.string('img');
-    table.integer('author1').references('authors.id');
-    table.integer('author2').references('authors.id');
-    table.integer('author3').references('authors.id');
-  })
+  });
 
   
 };

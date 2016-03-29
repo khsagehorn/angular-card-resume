@@ -1,4 +1,4 @@
-var knex = require('../db/knex');
+var knex = require('../knex');
 
 function Books(){
   return knex('books');
