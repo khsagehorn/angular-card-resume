@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
     table.string('lastName');
     table.string('bio');
     table.string('img');
-    table.integer('book_id').references('books.id');
   });
 };
 
